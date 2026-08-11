@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KTDH Imagebroschüre</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root{--navy:#0b3f78;--text:#10233c;--muted:#667085;--line:#e6eaf0;--bg:#f4f6f8;--white:#fff;--orange:#ea741a}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 24px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:18px}
+    .brand img{width:42px;height:42px;object-fit:contain}
+    .actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 15px;border:1px solid var(--navy);border-radius:9px;text-decoration:none;font-weight:700;color:var(--navy);background:white}
+    .btn.primary{background:var(--navy);color:white}
+    .counter{font-size:14px;color:var(--muted);padding:0 6px}
+    main{max-width:1120px;margin:0 auto;padding:28px 18px 56px}
+    .intro{text-align:center;margin:0 auto 24px;max-width:760px}
+    .intro .eyebrow{color:var(--orange);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+    .intro h1{font-size:clamp(28px,4vw,44px);line-height:1.08;margin:8px 0 8px;color:var(--navy)}
+    .intro p{margin:0;color:var(--muted);line-height:1.55}
+    .page{background:white;border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(17,35,60,.08);margin:0 auto 28px;overflow:hidden;scroll-margin-top:88px;max-width:920px}
+    .page img{display:block;width:100%;height:auto}
+    .page-label{text-align:center;color:var(--muted);font-size:13px;padding:10px;border-top:1px solid var(--line)}
+    .footer-note{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
+    @media (max-width:700px){.bar{padding:10px 12px}.brand span{display:none}.actions .counter{display:none}.btn{padding:8px 11px;font-size:13px}main{padding:20px 10px 40px}.page{border-radius:8px;margin-bottom:18px}}
+  </style>
+</head>
+<body>
+  <header class="bar">
+    <div class="brand"><img src="assets/logo.png" alt="KTDH"><span>KI trifft das Handwerk</span></div>
+    <div class="actions">
+      <a class="btn" href="index.html">Zur Website</a>
+      <span class="counter" id="counter">Seite 1 von 8</span>
+      <a class="btn" href="#seite-1" id="prev">Zurück</a>
+      <a class="btn primary" href="#seite-2" id="next">Weiter</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow">Imagebroschüre</div>
+      <h1>KI trifft das Handwerk</h1>
+      <p>Die Broschüre wird direkt im Browser angezeigt. Ein separater PDF-Download ist auf dieser Seite nicht vorgesehen.</p>
+    </section>
+    <section class="page" id="seite-1" data-page="1"><img src="assets/brochure/page-1.jpg" alt="KTDH Imagebroschüre Seite 1" loading="eager"><div class="page-label">Seite 1</div></section>
+    <section class="page" id="seite-2" data-page="2"><img src="assets/brochure/page-2.jpg" alt="KTDH Imagebroschüre Seite 2" loading="lazy"><div class="page-label">Seite 2</div></section>
+    <section class="page" id="seite-3" data-page="3"><img src="assets/brochure/page-3.jpg" alt="KTDH Imagebroschüre Seite 3" loading="lazy"><div class="page-label">Seite 3</div></section>
+    <section class="page" id="seite-4" data-page="4"><img src="assets/brochure/page-4.jpg" alt="KTDH Imagebroschüre Seite 4" loading="lazy"><div class="page-label">Seite 4</div></section>
+    <section class="page" id="seite-5" data-page="5"><img src="assets/brochure/page-5.jpg" alt="KTDH Imagebroschüre Seite 5" loading="lazy"><div class="page-label">Seite 5</div></section>
+    <section class="page" id="seite-6" data-page="6"><img src="assets/brochure/page-6.jpg" alt="KTDH Imagebroschüre Seite 6" loading="lazy"><div class="page-label">Seite 6</div></section>
+    <section class="page" id="seite-7" data-page="7"><img src="assets/brochure/page-7.jpg" alt="KTDH Imagebroschüre Seite 7" loading="lazy"><div class="page-label">Seite 7</div></section>
+    <section class="page" id="seite-8" data-page="8"><img src="assets/brochure/page-8.jpg" alt="KTDH Imagebroschüre Seite 8" loading="lazy"><div class="page-label">Seite 8</div></section>
+    <div class="footer-note">KTDH - KI trifft das Handwerk</div>
+  </main>
+  <script>
+    const pages=[...document.querySelectorAll('.page')];
+    const counter=document.getElementById('counter');
+    const prev=document.getElementById('prev');
+    const next=document.getElementById('next');
+    let current=1;
+    function setCurrent(n){current=Math.max(1,Math.min(8,n));counter.textContent=`Seite ${current} von 8`;prev.href=`#seite-${Math.max(1,current-1)}`;next.href=`#seite-${Math.min(8,current+1)}`;}
+    const io=new IntersectionObserver(entries=>{const v=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(v)setCurrent(Number(v.target.dataset.page));},{threshold:[.35,.6]});
+    pages.forEach(p=>io.observe(p));
+    prev.addEventListener('click',()=>setCurrent(current-1));next.addEventListener('click',()=>setCurrent(current+1));
+  </script>
+</body>
+</html>
