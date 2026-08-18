@@ -10,6 +10,10 @@
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+    .legal-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line)}
+    .legal-top a{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 13px;border:1px solid var(--navy);border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;color:var(--navy);background:#fff}
+    .legal-top a:first-child{background:var(--navy);color:#fff}
+    .legal-top span{display:none}
     .bar{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 24px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
     .brand{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:18px}
     .brand img{width:42px;height:42px;object-fit:contain}
@@ -26,7 +30,7 @@
     .page img{display:block;width:100%;height:auto}
     .page-label{text-align:center;color:var(--muted);font-size:13px;padding:10px;border-top:1px solid var(--line)}
     .footer-note{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
-    @media (max-width:700px){.bar{padding:10px 12px}.brand span{display:none}.actions .counter{display:none}.btn{padding:8px 11px;font-size:13px}main{padding:20px 10px 40px}.page{border-radius:8px;margin-bottom:18px}}
+    @media (max-width:700px){.legal-top{padding:10px 12px;gap:8px}.legal-top a{width:100%;font-size:13px}.bar{padding:10px 12px}.brand span{display:none}.actions .counter{display:none}.btn{padding:8px 11px;font-size:13px}main{padding:20px 10px 40px}.page{border-radius:8px;margin-bottom:18px}}
   </style>
 </head>
 <body>
