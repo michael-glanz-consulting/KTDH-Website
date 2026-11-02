@@ -38,6 +38,92 @@
 @media(max-width:1090px){.kt-glass-stage-layout{grid-template-columns:1fr}.kt-glass-options{border-left:0;border-top:1px solid #d5e4e8}.kt-option-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.kt-glass-stage-layout .efh-living-scene svg{max-height:560px}.kt-stage-actions{align-items:stretch;flex-direction:column}.kt-stage-actions>div{justify-content:flex-start}}
 @media(max-width:660px){.kt-glass-intro{display:block}.kt-glass-intro h1{font-size:1.75rem}.kt-glass-flow{display:none}.kt-stage-bar{align-items:flex-start;flex-direction:column}.kt-stage-actions>div{display:grid;grid-template-columns:1fr 1fr}.kt-glass-stage-layout .efh-living-head{display:block}.kt-glass-stage-layout .efh-living-pills{margin-top:8px}}
 
+
+/* Interaktive Lernkacheln: echte Buttons statt rein dekorativer Hinweise. */
+.kt-mini-card-grid .card{display:flex;flex-direction:column;align-items:flex-start}
+.kt-mini-card-grid .card p{flex:1}
+button.kt-mini-open{appearance:none;border:1px solid #c6e2e9;border-radius:22px;background:#eaf5fa;color:#246381;font-weight:800;font-size:.81rem;line-height:1.3;padding:9px 13px;margin-top:10px;display:inline-flex;gap:7px;align-items:center;transition:background .16s,border-color .16s,transform .16s}
+button.kt-mini-open:hover,button.kt-mini-open[aria-expanded="true"]{background:#d7f0ed;border-color:#0b8b8e;color:#075c63;transform:translateY(-1px)}
+.kt-mini-lessons[hidden]{display:none!important}
+.kt-mini-lessons{margin:18px 0 25px;background:white;border:2px solid #9dd6d6;border-radius:17px;overflow:hidden;box-shadow:0 13px 30px #1a617515}
+.kt-mini-heading{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:18px 23px;background:#e9f5f4;border-bottom:1px solid #c6e2e1}
+.kt-mini-heading h3{margin:2px 0 0;font-size:1.35rem;color:#163e51}
+.kt-mini-eyebrow{font-size:.73rem;letter-spacing:.075em;text-transform:uppercase;font-weight:850;color:#087e87}
+.kt-mini-body{padding:22px 24px 25px}
+.kt-mini-help{margin:0 0 15px;color:#4a6675;max-width:940px}
+.kt-mini-progress{display:inline-flex;padding:4px 10px;background:#eaf3f7;border-radius:16px;color:#255772;font-size:.76rem;font-weight:800;margin-bottom:8px}
+.kt-mini-question{font-size:1.1rem;color:#173c53;margin:7px 0 14px}
+.kt-mini-diagram{width:min(100%,760px);max-width:100%;position:relative;margin:4px 0 16px;background:#e9f0f2;border:1px solid #cbdfe2;border-radius:12px;overflow:hidden;aspect-ratio:600/325}
+.kt-mini-diagram svg{display:block;width:100%;height:100%}
+.kt-mini-hotspot{position:absolute;transform:translate(-50%,-50%);width:39px;height:39px;border-radius:50%;border:3px solid #fff;background:#0c7e85;color:white;font-weight:900;box-shadow:0 4px 14px #073b5360;display:grid;place-items:center;cursor:pointer}
+.kt-mini-hotspot:hover,.kt-mini-hotspot:focus-visible{background:#0b5660;transform:translate(-50%,-50%) scale(1.1)}
+.kt-mini-hotspot.is-correct{background:#17855e}
+.kt-mini-feedback{margin:12px 0;padding:12px 15px;background:#edf4f7;border-radius:10px;color:#264c60;line-height:1.5;min-height:48px}
+.kt-mini-feedback.is-good{background:#e6f6ed;color:#165b3e}
+.kt-mini-feedback.is-wrong{background:#fff3e9;color:#814219}
+.kt-mini-next[hidden]{display:none}
+.kt-mini-buttons{display:flex;flex-wrap:wrap;gap:9px;margin:10px 0 15px}
+.kt-mini-buttons button{border:1px solid #a8cbd1;border-radius:9px;background:#f7fbfc;padding:10px 15px;color:#17485c;font-weight:750;cursor:pointer}
+.kt-mini-buttons button:hover,.kt-mini-buttons button[aria-pressed="true"]{background:#0e7e85;color:white;border-color:#0e7e85}
+.kt-mini-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:780px;margin:15px 0}
+.kt-mini-result{padding:16px;border:1px solid #d1e1e7;border-radius:11px;background:#f7fbfc}
+.kt-mini-result strong{display:block;font-size:1.5rem;line-height:1.5;color:#173d55}
+.kt-mini-result small{color:#516f7e}
+.kt-mini-result.is-selected{border:2px solid #0c8587;background:#e8f7f4}
+.kt-mini-bar{height:10px;background:#dce8eb;border-radius:12px;margin-top:10px;overflow:hidden}
+.kt-mini-bar>span{height:100%;display:block;background:#0c8587;border-radius:12px}
+.kt-mini-footnote{font-size:.85rem;color:#597281;max-width:960px;margin:12px 0 0}
+.kt-mini-window-visual{width:min(100%,450px);aspect-ratio:1.45;display:grid;place-items:center;margin:12px 0 15px;background:linear-gradient(#dfedf3,#f3f8fa);border-radius:14px;border:1px solid #d3e2ea;overflow:hidden}
+.kt-mini-window-frame{width:57%;height:76%;border:13px solid #c5d0d6;box-shadow:0 0 0 3px #6b8792,inset 0 0 0 2px #819aa5;perspective:650px;position:relative;background:#bfdee6}
+.kt-mini-window-sash{position:relative;width:100%;height:100%;border:11px solid #f0f4f5;background:linear-gradient(145deg,#c6e7ed,#96c7d4);box-shadow:inset 0 0 0 2px #779ba9;transform-origin:left center;transition:transform .4s ease}
+.kt-mini-window-sash:after{content:"";position:absolute;left:7%;top:8%;width:30%;height:67%;background:#fff7;transform:skew(-16deg)}
+.kt-mini-window-visual[data-kt-window-mode="turn"] .kt-mini-window-sash{transform:perspective(650px) rotateY(-52deg)}
+.kt-mini-window-visual[data-kt-window-mode="tilt"] .kt-mini-window-sash{transform-origin:center bottom;transform:perspective(650px) rotateX(-35deg)}
+.kt-mini-window-handle{position:absolute;right:-14px;top:44%;width:7px;height:27px;background:#365e6c;border-radius:4px;z-index:2}
+.kt-mini-question-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px;max-width:840px;margin:10px 0}
+.kt-mini-question-choices button{padding:11px 13px;border:1px solid #a8cbd1;background:#f6fbfc;border-radius:9px;text-align:left;color:#20485d;cursor:pointer}
+.kt-mini-question-choices button:hover,.kt-mini-question-choices button:focus-visible{background:#e7f4f4;border-color:#0a838b}
+@media(max-width:660px){.kt-mini-heading{align-items:flex-start;flex-direction:column;padding:14px}.kt-mini-body{padding:15px}.kt-mini-result-grid{grid-template-columns:1fr}.kt-mini-hotspot{width:31px;height:31px;font-size:.83rem;border-width:2px}.kt-mini-question{font-size:1rem}}
+
+
+/* Lernaufgabe Bauteile: Original-Terrassenfront aus dem KTDH-Hausmodell */
+body.kt-learning-open .nav{position:relative;top:auto}
+.kt-mini-lessons{scroll-margin-top:65px}
+.kt-terrace-layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(270px,.75fr);gap:17px;align-items:start;margin:9px 0 18px}
+.kt-terrace-main{min-width:0}
+.kt-terrace-photo{margin:0;position:relative;width:100%;aspect-ratio:790/500;background:#d8e2e5;border:1px solid #cbdde2;border-radius:15px;overflow:hidden;box-shadow:0 8px 22px #284e5a20}
+.kt-terrace-photo svg{display:block;width:100%;height:100%}
+.kt-terrace-photo.is-zoomed{aspect-ratio:560/450}
+.kt-terrace-zoom{appearance:none;display:block;width:100%;border:1px solid #b5d3da;border-radius:9px;background:#fff;color:#145768;font-weight:800;font-size:.85rem;padding:9px 10px;margin:-5px 0 15px;cursor:pointer}
+.kt-terrace-zoom:hover,.kt-terrace-zoom:focus-visible{background:#e0f1f2;border-color:#17828b}
+.kt-terrace-photo .kt-terrace-photo-caption{position:absolute;left:13px;top:13px;background:#102d3de0;color:#fff;padding:7px 11px;font-size:.8rem;line-height:1.3;border-radius:7px;font-weight:800;max-width:calc(100% - 26px)}
+.kt-terrace-photo .kt-mini-hotspot{width:46px;height:46px;border:3px solid white;font-size:1.05rem;z-index:2;transition:transform .18s,box-shadow .18s;box-shadow:0 3px 0 #14344570,0 5px 20px #09232d8a}
+.kt-terrace-photo .kt-mini-hotspot[data-kt-part="frame"]{background:#1a77c0}
+.kt-terrace-photo .kt-mini-hotspot[data-kt-part="sash"]{background:#339847}
+.kt-terrace-photo .kt-mini-hotspot[data-kt-part="glass"]{background:#8054b6}
+.kt-terrace-photo .kt-mini-hotspot[data-kt-part="hardware"]{background:#e0a20b;color:#192b38}
+.kt-terrace-photo .kt-mini-hotspot[data-kt-part="seal"]{background:#d34275}
+.kt-terrace-photo .kt-mini-hotspot.is-correct{box-shadow:0 0 0 4px #d6ffd9,0 7px 20px #09232d8a}
+.kt-terrace-photo .kt-mini-hotspot:focus-visible{outline:4px solid #fff483;outline-offset:3px}
+.kt-terrace-caption{margin:8px 4px 0;font-size:.8rem;color:#516b79;line-height:1.48}
+.kt-terrace-aside{background:#f5fafc;border:1px solid #d2e3e8;border-radius:13px;padding:16px}
+.kt-terrace-aside h5{margin:0 0 8px;font-size:1.05rem;color:#173c50}
+.kt-terrace-aside p{margin:0 0 13px;font-size:.88rem;line-height:1.53;color:#395969}
+.kt-terrace-toggle{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:0 0 14px}
+.kt-terrace-toggle button{appearance:none;border:1px solid #94bac8;border-radius:9px;padding:9px 8px;background:#fff;color:#1a5365;font-weight:800;font-size:.86rem;line-height:1.2;cursor:pointer}
+.kt-terrace-toggle button[aria-pressed="true"]{background:#076f7b;color:#fff;border-color:#076f7b}
+.kt-terrace-toggle button:hover,.kt-terrace-toggle button:focus-visible{box-shadow:0 0 0 3px #9ad8d99c;outline:none}
+.kt-terrace-hint{background:#e4f2f6;border-left:4px solid #11828b;border-radius:8px;padding:11px 12px;font-size:.88rem;line-height:1.5;color:#234c5c;margin-bottom:12px}
+.kt-terrace-hint strong{display:block;color:#103b4c;margin-bottom:3px}
+.kt-terrace-why{margin:8px 0 0;padding:12px;border:1px solid #d3e4e9;border-radius:9px;background:#fff}
+.kt-terrace-why strong{color:#153c4d;font-size:.85rem}.kt-terrace-why p{font-size:.82rem;margin:5px 0 0}
+.kt-terrace-key{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:16px 0 12px}
+.kt-terrace-key>div{border:1px solid #d2e2e7;background:#fff;padding:8px 6px;border-radius:9px;text-align:center;font-size:.77rem;font-weight:750;color:#254656}
+.kt-terrace-key span{display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;color:#fff;font-weight:900;margin:0 0 5px}
+.kt-terrace-key>div:nth-child(1) span{background:#1a77c0}.kt-terrace-key>div:nth-child(2) span{background:#339847}.kt-terrace-key>div:nth-child(3) span{background:#8054b6}.kt-terrace-key>div:nth-child(4) span{background:#c08a08}.kt-terrace-key>div:nth-child(5) span{background:#d34275}
+@media(max-width:890px){.kt-terrace-layout{grid-template-columns:1fr}.kt-terrace-aside{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}.kt-terrace-aside h5,.kt-terrace-aside .kt-terrace-toggle,.kt-terrace-aside .kt-terrace-hint{grid-column:1/-1}}
+@media(max-width:550px){.kt-terrace-aside{display:block;padding:13px}.kt-terrace-photo .kt-mini-hotspot{width:31px;height:31px;font-size:.8rem;border:2px solid white}.kt-terrace-photo .kt-terrace-photo-caption{font-size:.67rem;top:5px;left:5px;padding:4px 7px}.kt-terrace-key{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+@media(prefers-reduced-motion:reduce){.kt-terrace-photo .kt-mini-hotspot{transition:none}}
 </style>
 </head>
 <body>
@@ -128,7 +214,16 @@
 <div aria-live="polite" class="note" id="warning-size">Konfiguriere dein Fenster.</div>
 </section>
 </div>
-<div class="spacer"></div><div class="grid grid3"><div class="card"><h3>Rahmen</h3><p>Der Blendrahmen wird in die Bauöffnung eingebaut. Der Flügel lässt sich – abhängig von der Öffnungsart – öffnen.</p><div class="badge">Bauteile zuordnen</div></div><div class="card"><h3>Isolierglas</h3><p>Mehrere Glasscheiben und Zwischenräume bilden das Isolierglaselement. Der Ug-Wert beschreibt nur das Glas, nicht das komplette Fenster.</p><div class="badge">Wärme verstehen</div></div><div class="card"><h3>Beschlag &amp; Dichtung</h3><p>Beschläge ermöglichen die Bewegung; Dichtungen gehören zu einem funktionsfähigen Fensteranschluss.</p><div class="badge">Funktion testen</div></div></div>
+<div class="spacer"></div>
+<div class="grid grid3 kt-mini-card-grid" aria-label="Interaktive Lernübungen Fensterbau">
+ <div class="card"><h3>Rahmen</h3><p>Der Blendrahmen wird in die Bauöffnung eingebaut. Der Flügel lässt sich – abhängig von der Öffnungsart – öffnen.</p><button class="badge kt-mini-open" type="button" data-kt-lesson="parts" aria-expanded="false" aria-controls="kt-mini-lessons">Bauteile zuordnen <span aria-hidden="true">↗</span></button></div>
+ <div class="card"><h3>Isolierglas</h3><p>Mehrere Glasscheiben und Zwischenräume bilden das Isolierglaselement. Der Ug-Wert beschreibt nur das Glas, nicht das komplette Fenster.</p><button class="badge kt-mini-open" type="button" data-kt-lesson="heat" aria-expanded="false" aria-controls="kt-mini-lessons">Wärme verstehen <span aria-hidden="true">↗</span></button></div>
+ <div class="card"><h3>Beschlag &amp; Dichtung</h3><p>Beschläge ermöglichen die Bewegung; Dichtungen gehören zu einem funktionsfähigen Fensteranschluss.</p><button class="badge kt-mini-open" type="button" data-kt-lesson="function" aria-expanded="false" aria-controls="kt-mini-lessons">Funktion testen <span aria-hidden="true">↗</span></button></div>
+</div>
+<section id="kt-mini-lessons" class="kt-mini-lessons" aria-labelledby="kt-mini-title" hidden>
+ <div class="kt-mini-heading"><div><span class="kt-mini-eyebrow">Ebene 1 · Praxisübung</span><h3 id="kt-mini-title" tabindex="-1">Interaktive Lernübung</h3></div><button type="button" class="btn btn-outline btn-small" id="kt-mini-close">Übung schließen ×</button></div>
+ <div class="kt-mini-body" id="kt-mini-body"></div>
+</section>
 <div class="intro-panel"><div><strong>Deine nächsten Schritte</strong><p>Du hast die technische Variante festgelegt. Im nächsten Bereich rechnest du mit passenden Mengen und veränderbaren Lernpreisen.</p></div><button class="btn btn-primary" data-go="kosten" type="button">Zur Kostenübersicht →</button></div>
 </main>
 </section>
@@ -397,6 +492,170 @@ document.querySelectorAll('[data-kt-glass-field]').forEach(button=>button.addEve
 }));
 $('living-room-view').addEventListener('click',e=>{if(e.target.closest('[data-kt-glass-action]'))ktGlassSetStage('design');});
 $('living-room-view').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.hasAttribute('data-kt-glass-action')){e.preventDefault();ktGlassSetStage('design');}});
+
+// Drei interaktive Lernaufgaben in der Fensterwerkstatt. Das Hausbild und die
+// bestehende Fenster-/Kostenberechnung bleiben unveraendert.
+const ktMiniState={active:null,partIndex:0,partCorrect:false,partFeedback:'',partView:'closed',partZoom:false,heatAnswered:false,functionAnswered:false};
+const ktParts=[
+ {key:'frame',name:'Blendrahmen',detail:'Der Blendrahmen sitzt außen und verbindet das Fensterelement mit der Bauöffnung.'},
+ {key:'sash',name:'Flügel',detail:'Der Fensterflügel ist das bewegliche Rahmenelement.'},
+ {key:'glass',name:'Isolierglas',detail:'Die Glasscheiben lassen Licht ein; das Isolierglas hat einen eigenen Ug-Wert.'},
+ {key:'hardware',name:'Beschlag / Griff',detail:'Beschläge ermöglichen das Öffnen, Kippen und Verriegeln des beweglichen Flügels.'},
+ {key:'seal',name:'Dichtung',detail:'Dichtungen unterstützen den Luft- und Schlagregenschutz des geschlossenen Fensters.'}
+];
+let ktMiniLastTrigger=null;
+function ktMiniOpen(which,trigger){
+ ktMiniLastTrigger=trigger;
+ ktMiniState.active=which;
+ if(which==='parts'){ktMiniState.partIndex=0;ktMiniState.partCorrect=false;ktMiniState.partFeedback='';ktMiniState.partView='closed';ktMiniState.partZoom=false;}
+ if(which==='heat')ktMiniState.heatAnswered=false;
+ if(which==='function')ktMiniState.functionAnswered=false;
+ const titles={parts:'Bauteile an unserer Terrassenfront zuordnen',heat:'Wärme verstehen: 2-fach oder 3-fach?',function:'Fenster öffnen und Funktion prüfen'};
+ $('kt-mini-title').textContent=titles[which];
+ $('kt-mini-lessons').hidden=false;
+ document.querySelectorAll('[data-kt-lesson]').forEach(b=>b.setAttribute('aria-expanded',String(b.dataset.ktLesson===which)));
+ ktMiniRender();
+ $('kt-mini-lessons').scrollIntoView({behavior:'smooth',block:'start'});
+ $('kt-mini-title').focus({preventScroll:true});
+}
+function ktMiniClose(){
+ $('kt-mini-lessons').hidden=true;
+ document.querySelectorAll('[data-kt-lesson]').forEach(b=>b.setAttribute('aria-expanded','false'));
+ ktMiniState.active=null;
+ if(ktMiniLastTrigger)ktMiniLastTrigger.focus({preventScroll:true});
+}
+function ktMiniRender(){
+ if(ktMiniState.active==='parts')ktMiniRenderParts();
+ if(ktMiniState.active==='heat')ktMiniRenderHeat();
+ if(ktMiniState.active==='function')ktMiniRenderFunction();
+}
+function ktMiniPartGraphic(){
+ const opened=ktMiniState.partView==='open';
+ const vb=ktMiniState.partZoom?{x:475,y:100,w:560,h:450}:{x:350,y:70,w:790,h:500};
+ const px=(x)=>((x-vb.x)*100/vb.w).toFixed(2)+'%';
+ const py=(y)=>((y-vb.y)*100/vb.h).toFixed(2)+'%';
+ // Die Perspektive ist auf den Original-Wohn-/Essbereich unseres digitalen
+ // Einfamilienhauses zugeschnitten (vier Elemente, dunkle Profile).
+ // Die drehende Glasscheibe ist eine didaktische 3D-Überlagerung, kein
+ // Nachweis des realen Öffnungsmechanismus und keine technische Montagezeichnung.
+ const openOverlay=opened?`<g aria-hidden="true">
+ <polygon points="717,176 828,158 829,458 717,447" fill="#102d39" opacity=".27"/>
+ <polygon points="715,171 558,221 549,523 715,448" fill="#78b8cb" fill-opacity=".37" stroke="#29424a" stroke-width="12" stroke-linejoin="round"/>
+ <polygon points="715,171 558,221 549,523 715,448" fill="none" stroke="#b3ced6" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M705 175L705 445" stroke="#111e24" stroke-width="16" stroke-linecap="round"/>
+ <path d="M697 180L697 444" stroke="#d34275" stroke-width="6" stroke-dasharray="11 7" stroke-linecap="round"/>
+ <path d="M691 338l-31 8" stroke="#f9fcff" stroke-width="11" stroke-linecap="round"/>
+ <path d="M691 338l-31 8" stroke="#324953" stroke-width="5" stroke-linecap="round"/>
+ <path d="M577 231L654 208L564 449" fill="#fff" fill-opacity=".15"/>
+ </g>`:'';
+ const hotspots=[
+  {key:'frame',num:1,x:px(974),y:py(155),name:'Markierung 1 am fest eingebauten Außenrahmen'},
+  {key:'sash',num:2,x:px(713),y:py(220),name:'Markierung 2 am beweglichen Fensterflügel'},
+  {key:'glass',num:3,x:px(opened?605:754),y:py(opened?300:300),name:'Markierung 3 auf der Glasfläche'},
+  {key:'hardware',num:4,x:px(opened?666:927),y:py(opened?360:322),name:'Markierung 4 am Fenstergriff'},
+  ...(opened?[{key:'seal',num:5,x:px(697),y:py(425),name:'Markierung 5 an der Dichtung im geöffneten Flügel'}]:[])
+ ];
+ return `<div class="kt-terrace-layout"><div class="kt-terrace-main">
+ <figure class="kt-terrace-photo ${ktMiniState.partZoom?'is-zoomed':''}" role="group" aria-label="Unser vierteiliges Terrassenfenster aus dem Original-Wohn-/Essbereich, ${opened?'ein Flügel anschaulich geöffnet':'geschlossen'}">
+ <svg viewBox="${vb.x} ${vb.y} ${vb.w} ${vb.h}" role="img" aria-label="Original-Rohbauraum mit vierteiliger Fensterfront ${opened?'und beispielhaft nach innen gedrehtem Flügel':''}"><image href="${ORIGINAL_LIVING}" x="0" y="0" width="1161" height="700"/>
+ ${openOverlay}</svg>
+ <span class="kt-terrace-photo-caption">${opened?'Geöffnet · 3D-Lernansicht':'Geschlossen · Originalraum'}</span>
+ ${hotspots.map(h=>`<button type="button" class="kt-mini-hotspot" data-kt-part="${h.key}" aria-label="${h.name}" style="left:${h.x};top:${h.y}">${h.num}</button>`).join('')}
+ </figure><figcaption class="kt-terrace-caption">Originalansicht aus unserem KTDH-Einfamilienhaus. Das geöffnete Element ist eine verständliche 3D-Lernüberlagerung der Terrassenfront; tatsächliche Beschläge, Profilquerschnitte und Öffnungsrichtungen können abweichen.</figcaption>
+ </div><aside class="kt-terrace-aside"><h5>Unser Fenster im Haus</h5>
+ <p>Du siehst die <strong>vierteilige Terrassenfront</strong> im Wohn- und Essbereich – kein einzelnes Musterfenster.</p>
+ <div class="kt-terrace-toggle" role="group" aria-label="Fensteransicht wählen">
+ <button type="button" data-kt-part-view="closed" aria-pressed="${!opened}">Geschlossen</button>
+ <button type="button" data-kt-part-view="open" aria-pressed="${opened}">Geöffnet (3D)</button></div>
+ <button type="button" class="kt-terrace-zoom" data-kt-part-zoom aria-pressed="${ktMiniState.partZoom}">${ktMiniState.partZoom?'↩ Wieder den ganzen Raum zeigen':'⤢ Fensterfront vergrößern'}</button>
+ <div class="kt-terrace-hint" role="status"><strong>${opened?'Jetzt sind weitere Details sichtbar':'Erst den Raum ansehen'}</strong>${opened?'Beim Öffnen wird die Seite des beweglichen Flügels sichtbar. Die rosa markierte Linie zeigt, wo eine Dichtung sitzt.':'Wähle eine Nummer direkt am Fenster. Probiere anschließend „Geöffnet (3D)“, um Flügel und Dichtung besser zu unterscheiden.'}</div>
+ <div class="kt-terrace-why"><strong>Das solltest du unterscheiden</strong><p><b>Blendrahmen</b> bleibt im Baukörper. <b>Flügel</b> bewegt sich. <b>Glas</b> lässt Licht hinein. <b>Beschläge</b> ermöglichen Öffnen und Verriegeln. <b>Dichtungen</b> unterstützen einen dichten Abschluss.</p></div>
+ </aside></div>`;
+}
+function ktMiniPartKey(){return `<div class="kt-terrace-key" aria-label="Erkannte Fensterbauteile">
+ ${ktParts.map((p,i)=>`<div><span>${i+1}</span><br>${p.name}</div>`).join('')}
+ </div>`;}
+function ktMiniRenderParts(){
+ const done=ktMiniState.partIndex>=ktParts.length;
+ if(done){$('kt-mini-body').innerHTML=`<p class="kt-mini-help"><strong>Geschafft!</strong> Du hast die fünf Bauteile an unserer Terrassenfront richtig zugeordnet. Vergleiche auch den geschlossenen und geöffneten Zustand.</p>${ktMiniPartGraphic()}${ktMiniPartKey()}<div class="kt-mini-feedback is-good" role="status">5 von 5: Blendrahmen, Flügel, Isolierglas, Beschlag und Dichtung erkannt.</div><button type="button" class="btn btn-outline btn-small" data-kt-part-reset>Erneut üben</button>`;return;}
+ const item=ktParts[ktMiniState.partIndex],seal=item.key==='seal';
+ $('kt-mini-body').innerHTML=`<p class="kt-mini-help">Suche die Bauteile <strong>an unserer vierteiligen Terrassenfront</strong>. Klicke eine farbige Nummer im Bild an; schalte für verborgene Bauteile auf <strong>„Geöffnet (3D)“</strong>.</p>
+ <span class="kt-mini-progress">Bauteil ${ktMiniState.partIndex+1} von ${ktParts.length}</span>
+ <h4 class="kt-mini-question">Wo findest du: ${item.name}?</h4>
+ ${ktMiniPartGraphic()}
+ <div class="kt-mini-feedback${ktMiniState.partCorrect?' is-good':''}" id="kt-mini-part-feedback" role="status" aria-live="polite">${ktMiniState.partFeedback|| (seal&&ktMiniState.partView!=='open'?'Tipp: Öffne das Terrassenelement mit „Geöffnet (3D)“, damit du die Dichtung erkennen kannst.':'Klicke eine farbige Nummer direkt in unserer Terrassenfront an.')}</div>
+ <button type="button" class="btn btn-primary btn-small kt-mini-next" data-kt-part-next ${ktMiniState.partCorrect?'':'hidden'}>${ktMiniState.partIndex===ktParts.length-1?'Ergebnis anzeigen':'Nächstes Bauteil →'}</button>`;
+ if(ktMiniState.partCorrect){const b=$('kt-mini-body').querySelector(`[data-kt-part="${item.key}"]`);if(b)b.classList.add('is-correct');}
+}
+function ktMiniSelectPart(key){
+ if(ktMiniState.partCorrect||ktMiniState.partIndex>=ktParts.length)return;
+ const item=ktParts[ktMiniState.partIndex];
+ if(key===item.key){ktMiniState.partCorrect=true;ktMiniState.partFeedback='Richtig! '+item.detail;ktMiniRenderParts();}
+ else {const fb=$('kt-mini-part-feedback');fb.textContent='Noch nicht ganz. Vergleiche fest eingebauten Rahmen, beweglichen Flügel, Glas und Griff. Du kannst das Fenster auch öffnen.';fb.classList.add('is-wrong');}
+}
+function ktMiniSetPartView(view){
+ if(view!=='open'&&view!=='closed')return;
+ ktMiniState.partView=view;ktMiniRenderParts();
+}
+function ktMiniTogglePartZoom(){ktMiniState.partZoom=!ktMiniState.partZoom;ktMiniRenderParts();}
+function ktMiniRenderHeat(){
+ const c=calc(),version=c.c.glass,ug2=1.1,ug3=.6,delta=20,heat2=ug2*c.sight*delta,heat3=ug3*c.sight*delta;
+ const h=(v)=>Number(v).toLocaleString('de-DE',{maximumFractionDigits:1,minimumFractionDigits:1});
+ $('kt-mini-body').innerHTML=`<p class="kt-mini-help">Vergleiche zwei beispielhafte Verglasungen bei gleicher Glasfläche und einem Temperaturunterschied von <strong>20 °C</strong>. Klicke auf eine Variante: Die Auswahl wird auch im Fensterkonfigurator und in der Stückliste übernommen.</p>
+ <div class="kt-mini-buttons"><button type="button" data-kt-heat="2" aria-pressed="${version==='2'}">2-fach-Verglasung auswählen</button><button type="button" data-kt-heat="3" aria-pressed="${version==='3'}">3-fach-Verglasung auswählen</button></div>
+ <div class="kt-mini-result-grid">
+ <div class="kt-mini-result ${version==='2'?'is-selected':''}"><small>2-fach · Beispiel-Ug 1,1 W/(m²·K)</small><strong>${h(heat2)} W</strong><small>Modellierter Wärmeverlust nur über die Glasfläche</small><div class="kt-mini-bar"><span style="width:100%"></span></div></div>
+ <div class="kt-mini-result ${version==='3'?'is-selected':''}"><small>3-fach · Beispiel-Ug 0,6 W/(m²·K)</small><strong>${h(heat3)} W</strong><small>Modellierter Wärmeverlust nur über die Glasfläche</small><div class="kt-mini-bar"><span style="width:${Math.round(100*heat3/heat2)}%"></span></div></div>
+ </div>
+ <div class="kt-mini-feedback" role="status">Bei diesen <strong>Beispielwerten</strong> gehen über die Verglasung mit kleinerem Ug-Wert weniger Watt verloren. Es handelt sich nicht um eine Energiebedarfsberechnung des Raumes.</div>
+ <h4 class="kt-mini-question">Wissensfrage: Was beschreibt der Ug-Wert?</h4>
+ <div class="kt-mini-question-choices"><button type="button" data-kt-heat-answer="true">Den Wärmedurchgang der Verglasung</button><button type="button" data-kt-heat-answer="false">Den Wärmedurchgang des gesamten Fensters</button></div>
+ <div class="kt-mini-feedback${ktMiniState.heatAnswered?' is-good':''}" id="kt-mini-heat-feedback" role="status" aria-live="polite">${ktMiniState.heatAnswered?'Richtig! Ug bezieht sich nur auf das Glas. Uw bezieht sich auf das gesamte Fenster einschließlich Rahmen.':'Wähle die passende Aussage.'}</div>
+ <p class="kt-mini-footnote">Didaktische Annahmen: Ug 1,1 bzw. 0,6 W/(m²·K), Temperaturdifferenz 20 K und die vereinfachte Glas-Sichtfläche aus dem Konfigurator. Tatsächliche Ug-/Uw-Werte hängen vom gewählten Produkt ab; Einbau, Wärmebrücken und Lüftung sind hier nicht berücksichtigt.</p>`;
+}
+function ktMiniRenderFunction(){
+ const opening=readConfig().opening,fixed=opening==='fixed',mode=fixed?'closed':app.mode;
+ const text={closed:'Das Fenster ist geschlossen. Beschlag und Dichtung erfüllen ihre vorgesehenen Funktionen im geschlossenen System.',turn:'Der Flügel wird um die seitliche Achse gedreht. Die Beschläge führen die Bewegung.',tilt:'Beim Kippen wird der Flügel oben geöffnet. Die Beschläge begrenzen und führen diese Bewegung.'};
+ $('kt-mini-body').innerHTML=`<p class="kt-mini-help">Probiere die drei Zustände aus. Diese Schaltflächen steuern zugleich die vorhandene Fenster-Zeichnung im Technikbereich.</p>
+ <div class="kt-mini-buttons"><button type="button" data-kt-function-mode="closed" aria-pressed="${mode==='closed'}">Geschlossen</button><button type="button" data-kt-function-mode="turn" aria-pressed="${mode==='turn'}" ${fixed?'disabled':''}>Drehen</button><button type="button" data-kt-function-mode="tilt" aria-pressed="${mode==='tilt'}" ${fixed?'disabled':''}>Kippen</button></div>
+ <div class="kt-mini-window-visual" data-kt-window-mode="${mode}" aria-label="Vereinfachte technische Fensterbewegung: ${mode}"><div class="kt-mini-window-frame"><div class="kt-mini-window-sash"><div class="kt-mini-window-handle"></div></div></div></div>
+ <div class="kt-mini-feedback" role="status">${fixed?'Festverglasung kann nicht geöffnet oder gekippt werden. Wähle im Konfigurator eine Dreh-Kipp-Variante, um diese Funktionen zu testen.':text[mode]}</div>
+ <h4 class="kt-mini-question">Wissensfrage: Wozu dient die Dichtung?</h4>
+ <div class="kt-mini-question-choices"><button type="button" data-kt-function-answer="false">Sie übernimmt die gesamte Bewegung des Flügels.</button><button type="button" data-kt-function-answer="true">Sie unterstützt den Luft- und Schlagregenschutz.</button><button type="button" data-kt-function-answer="false">Sie ersetzt die fachgerechte Fenstermontage.</button></div>
+ <div class="kt-mini-feedback${ktMiniState.functionAnswered?' is-good':''}" id="kt-mini-function-feedback" role="status" aria-live="polite">${ktMiniState.functionAnswered?'Richtig! Beschläge ermöglichen die Bewegung; Dichtungen unterstützen den Luft- und Schlagregenschutz.':'Wähle die richtige Antwort.'}</div>
+ <p class="kt-mini-footnote">Die dargestellte Bewegung ist eine vereinfachte Lernanimation und keine Montage- oder Bedienanleitung für reale Fenster.</p>`;
+}
+document.querySelectorAll('[data-kt-lesson]').forEach(b=>b.addEventListener('click',()=>{
+ if(ktMiniState.active===b.dataset.ktLesson){ktMiniClose();return;}
+ ktMiniOpen(b.dataset.ktLesson,b);
+}));
+$('kt-mini-close').addEventListener('click',ktMiniClose);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&ktMiniState.active)ktMiniClose();});
+$('kt-mini-body').addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b)return;
+ if(b.hasAttribute('data-kt-part'))ktMiniSelectPart(b.dataset.ktPart);
+ else if(b.hasAttribute('data-kt-part-view'))ktMiniSetPartView(b.dataset.ktPartView);
+ else if(b.hasAttribute('data-kt-part-zoom'))ktMiniTogglePartZoom();
+ else if(b.hasAttribute('data-kt-part-next')){if(!ktMiniState.partCorrect)return;ktMiniState.partIndex++;ktMiniState.partCorrect=false;ktMiniState.partFeedback='';if(ktParts[ktMiniState.partIndex]?.key==='seal')ktMiniState.partView='open';ktMiniRenderParts();}
+ else if(b.hasAttribute('data-kt-part-reset')){ktMiniState.partIndex=0;ktMiniState.partCorrect=false;ktMiniState.partFeedback='';ktMiniState.partView='closed';ktMiniState.partZoom=false;ktMiniRenderParts();}
+ else if(b.hasAttribute('data-kt-heat')){$('glass').value=b.dataset.ktHeat;glassStage='design';update();ktMiniRenderHeat();}
+ else if(b.hasAttribute('data-kt-heat-answer')){
+  const fb=$('kt-mini-heat-feedback');const right=b.dataset.ktHeatAnswer==='true';
+  ktMiniState.heatAnswered=right;fb.className='kt-mini-feedback '+(right?'is-good':'is-wrong');fb.textContent=right?'Richtig! Ug bezieht sich auf die Verglasung. Uw beschreibt das gesamte Fenster.':'Noch nicht: Der Ug-Wert bezieht sich nur auf das Glas. Versuche es erneut.';
+ }
+ else if(b.hasAttribute('data-kt-function-mode')){
+  const mode=b.dataset.ktFunctionMode;
+  if(readConfig().opening==='fixed'&&mode!=='closed')return;
+  app.mode=mode;renderWindow();renderLivingRoom();ktMiniRenderFunction();
+ }
+ else if(b.hasAttribute('data-kt-function-answer')){
+  const fb=$('kt-mini-function-feedback');const right=b.dataset.ktFunctionAnswer==='true';
+  ktMiniState.functionAnswered=right;fb.className='kt-mini-feedback '+(right?'is-good':'is-wrong');fb.textContent=right?'Richtig! Dichtungen unterstützen den Luft- und Schlagregenschutz; Beschläge bewegen und verriegeln den Flügel.':'Noch nicht. Dichtungen ersetzen weder Beschläge noch die fachgerechte Montage.';
+ }
+});
+// Änderungen an der Fensterart aktualisieren auch die offene Funktionsübung.
+$('opening').addEventListener('change',()=>{if(ktMiniState.active==='function')ktMiniRenderFunction();});
+
 </script>
 </body>
 </html>
