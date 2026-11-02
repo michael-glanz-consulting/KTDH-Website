@@ -68,6 +68,43 @@
 @media(max-width:690px){.kt-room-heading{display:block}.kt-room-heading h1{font-size:1.8rem}.kt-room-badges{max-width:none;justify-content:flex-start;margin-top:12px}.kt-room-stage .efh-decor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kt-stage-bar{align-items:flex-start;flex-direction:column;gap:8px}.kt-stage-actions>div{display:grid;grid-template-columns:1fr 1fr}.kt-stage-btn{font-size:.76rem}.kt-room-stage .efh-room-toolbar{flex-wrap:wrap}}
 
 </style>
+<style>
+/* KTDH gemeinsamer Projekteinstieg V1: Ergaenzung ohne Eingriff in Simulation/JS */
+.ktdh-entry { margin: 12px 0 27px; color: #173649; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+.ktdh-entry * { box-sizing: border-box; }
+.ktdh-entry-top { padding: 24px 26px 20px; border: 1px solid #d3e3e5; border-bottom: 0; border-radius: 17px 17px 0 0; background: linear-gradient(115deg,#f1f8f5 0%,#f6f9fb 100%); }
+.ktdh-entry-kicker { display: block; color:#1a7677; letter-spacing: .11em; font-size: .71rem; font-weight: 850; text-transform: uppercase; margin-bottom: 7px; }
+.ktdh-entry h2 { color: #17384a; font-weight: 800; font-size: clamp(1.36rem,2.2vw,1.85rem); letter-spacing:-.03em; line-height:1.25; margin: 0 0 10px; }
+.ktdh-entry-top p { font-size: .95rem; line-height:1.65; color:#4b6471; margin:0; max-width: 980px; }
+.ktdh-entry-body { border: 1px solid #d3e3e5; border-bottom:0; padding: 18px; display:grid; grid-template-columns:minmax(0,1.25fr) minmax(260px,.85fr); gap:16px; background:#fff; }
+.ktdh-entry-card { padding: 17px 19px; border: 1px solid #dce7e9; background: #fff; border-radius: 12px; min-width:0; }
+.ktdh-entry-card--data { background: #f5f9fa; }
+.ktdh-entry-card h3,.ktdh-entry-path h3 { font-size:.94rem; line-height:1.32; color:#224457; font-weight:800; margin:0 0 9px; }
+.ktdh-entry-card p { font-size:.88rem; line-height:1.63; color:#506a76; margin:0 0 15px; }
+.ktdh-entry-card p:last-child { margin-bottom:0; }
+.ktdh-entry-card h3:not(:first-child) { border-top: 1px solid #e5eded; padding-top: 11px; }
+.ktdh-entry-card dl { margin:0; }
+.ktdh-entry-card dl>div { border-top:1px solid #e1e9eb; display:grid; grid-template-columns: 118px minmax(0,1fr); gap:10px; padding:10px 0; font-size:.83rem; line-height:1.5; }
+.ktdh-entry-card dl>div:first-child { border-top:0; padding-top: 0; }
+.ktdh-entry-card dt { font-weight:750; color:#536f7a; }
+.ktdh-entry-card dd { margin:0; color:#244655; font-weight:680; }
+.ktdh-entry-data-note { color: #657c86; font-size: .76rem; line-height: 1.55; margin-top: 8px; }
+.ktdh-entry-path { padding: 18px 25px; border: 1px solid #d3e3e5; border-bottom:0; background:#f9fbfb; }
+.ktdh-entry-path ol { counter-reset: ktdhStep; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; margin: 11px 0 0; padding:0; list-style: none; }
+.ktdh-entry-path li { color:#3d6270; font-size:.79rem; line-height:1.45; border-top:2px solid #83b9b8; padding-top:9px; margin:0; }
+.ktdh-entry-path li::before { counter-increment: ktdhStep; content: '0' counter(ktdhStep); display:block; font-size:.77rem; color:#167b7b; font-weight:850; letter-spacing:.04em; margin-bottom:4px; }
+.ktdh-entry-path li strong { display:block; font-weight:800; color:#284d5b; margin-bottom:4px; }
+.ktdh-entry-path li span { display:block; }
+.ktdh-entry-end { display:flex; align-items:center; justify-content:space-between; gap: 15px; flex-wrap:wrap; border: 1px solid #d3e3e5; border-radius:0 0 16px 16px; padding:15px 24px; background:#eef7f4; }
+.ktdh-entry-end p { margin: 0; max-width:690px; font-size:.79rem; line-height:1.52; color:#506e78; }
+.ktdh-entry-end p strong { display:block; font-size: .81rem; color:#205864; margin-bottom:3px; }
+.ktdh-entry-action { background:#137b80; color:#fff !important; border: 1px solid #137b80; padding:11px 17px; min-height:42px; border-radius:9px; font:750 .85rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif; text-decoration:none; cursor:pointer; white-space:normal; display:inline-flex; align-items:center; justify-content:center; }
+.ktdh-entry-action:hover,.ktdh-entry-action:focus-visible { background:#075e65; border-color:#075e65; color:white !important; }
+.ktdh-entry a:focus-visible,.ktdh-entry button:focus-visible { outline:3px solid #e9a847; outline-offset:3px; }
+@media (max-width: 800px) { .ktdh-entry-body { grid-template-columns:1fr; } .ktdh-entry-path ol { grid-template-columns:repeat(2,minmax(0,1fr)); } .ktdh-entry-end {align-items:stretch;} }
+@media (max-width: 470px) { .ktdh-entry-top {padding:19px 15px;} .ktdh-entry-body {padding:11px;} .ktdh-entry-card {padding:14px;} .ktdh-entry-path {padding:14px 15px;} .ktdh-entry-path ol {grid-template-columns:1fr 1fr;} .ktdh-entry-card dl>div {grid-template-columns:90px minmax(0,1fr);} .ktdh-entry-end {padding:13px 15px;} .ktdh-entry-action {width:100%;} }
+@media print { .ktdh-entry-action {display:none;} }
+</style>
 </head>
 <body>
 <header class="sitehead"><div class="shell headerinner"><a aria-label="Zur WorkLab-Startseite" class="brand" href="../index.html#worklab"><span aria-hidden="true" class="brandmark">K</span><span>KI trifft das Handwerk<br/><span style="font-weight:550;font-size:.77rem;color:#5a7886">WORKLAB · GEWERK 04</span></span></a><a class="backlink" href="../index.html#worklab">← Zur WorkLab-Übersicht</a></div></header><section aria-labelledby="kt-wall-title" class="kt-room-intro shell">
@@ -77,7 +114,47 @@
 <p>Du stehst im <strong>Original-Rohbauraum unseres Hauses</strong>. Wähle eine Wand im Bild und klicke rechts auf ein Dekor. Die Veränderung erscheint unmittelbar <strong>im selben Raum</strong>.</p></div>
 <div class="kt-room-badges"><span>01 · Rohbau sehen</span><span>02 · Wand gestalten</span><span>03 · Lernen &amp; kalkulieren</span></div>
 </div>
-</section><section aria-label="Interaktives Schlafzimmer aus dem digitalen Einfamilienhaus" class="kt-room-stage shell" id="kt-wall-stage">
+</section><section class="ktdh-entry shell" aria-labelledby="ktdh-entry-title">
+  <div class="ktdh-entry-top">
+    <span class="ktdh-entry-kicker">KTDH WorkLab · Gemeinsamer Projekteinstieg · Gewerk Wand</span>
+    <h2 id="ktdh-entry-title">Ein Haus – eine Aufgabe: die Wand im Obergeschoss gestalten</h2>
+    <p>Wir lernen den Raum im digitalen Einfamilienhaus kennen und gestalten anschließend eine ausgewählte Wand im Schlafzimmer. Erst betrachten wir den Rohbau, dann probieren wir Materialien aus und überprüfen Wandaufbau, Mengen, Kosten und typische Fehler.</p>
+  </div>
+  <div class="ktdh-entry-body">
+    <div class="ktdh-entry-card">
+      <h3>Die Idee</h3>
+      <p>Schülerinnen und Schüler erkennen, wie aus einer vorhandenen Wand durch passende Material- und Gestaltungsentscheidungen ein fertiger Raum entsteht. Das Original-Raumbild zeigt die Wirkung unmittelbar; die Wandwerkstatt ergänzt Aufbau, Maße und die Materialrechnung.</p>
+      <h3>Unser Auftrag</h3>
+      <p>Wähle die Fensterwand oder Seitenwand. Vergleiche Oberflächen wie Farbe, Tapete, Putz und Fliesen. Stelle danach in der Wandwerkstatt die technischen Modellwerte ein, prüfe die Stückliste und begründe deine Entscheidung.</p>
+    </div>
+    <div class="ktdh-entry-card ktdh-entry-card--data">
+      <h3>Ausgangsdaten der Lernaufgabe</h3>
+      <dl>
+        <div><dt>Haus / Raum</dt><dd>Digitales Einfamilienhaus · Schlafzimmer im Obergeschoss</dd></div>
+        <div><dt>Bauteil</dt><dd>Fensterwand oder Seitenwand des Originalraums</dd></div>
+        <div><dt>Modellstart</dt><dd>4,0 m Breite · 2,6 m Höhe · Fensteröffnung</dd></div>
+        <div><dt>Bearbeitung</dt><dd>Wandaufbau und Wandoberfläche auswählen</dd></div>
+        <div><dt>Ergebnis</dt><dd>Raumansicht, Materialkosten, Stückliste und Projektblatt</dd></div>
+      </dl>
+      <div class="ktdh-entry-data-note">Die Maße sind veränderbare Lernannahmen und keine Vermessung des dargestellten Raums.</div>
+    </div>
+  </div>
+  <div class="ktdh-entry-path">
+    <h3>Unser Lernweg</h3>
+    <ol>
+      <li><strong>Haus kennenlernen</strong><span>Raum und Wand im Rohbau betrachten</span></li>
+      <li><strong>Wand wählen</strong><span>Fensterwand oder Seitenwand festlegen</span></li>
+      <li><strong>Gestalten</strong><span>Aufbau, Material und Maße erproben</span></li>
+      <li><strong>Prüfen</strong><span>Materialbedarf, Kosten und Fehler bewerten</span></li>
+      <li><strong>Ergebnis erklären</strong><span>Projektblatt und Stückliste sichern</span></li>
+    </ol>
+  </div>
+  <div class="ktdh-entry-end">
+    <p><strong>Was wir damit erproben möchten</strong>Ob eine unmittelbar sichtbare Raumgestaltung hilft, Materialentscheidungen, Wandaufbau und Mengenberechnung verständlich zu machen. Die Simulation ist ein Lernmodell, keine Ausführungsplanung.</p>
+    <a class="ktdh-entry-action" href="#kt-wall-stage">Wand im Originalraum ausprobieren →</a>
+  </div>
+</section>
+<section aria-label="Interaktives Schlafzimmer aus dem digitalen Einfamilienhaus" class="kt-room-stage shell" id="kt-wall-stage">
 <div class="kt-stage-bar">
 <div class="kt-stage-state"><span class="kt-live-indicator"></span><strong aria-live="polite" id="ktWallStageStatus">Original-Rohbau · noch unverändert</strong></div>
 <div aria-label="Raumansicht" class="kt-view-switch"><button aria-pressed="true" id="ktViewRaw" type="button">Rohbau</button><button aria-pressed="false" id="ktViewDesign" type="button">Gestaltung</button></div>
