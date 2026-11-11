@@ -659,19 +659,19 @@ function renderLivingRoom(){
  }
  const frame={pvc:'#e8ecea',wood:'#b08159',alu:'#617e89'}[c.frame];
  const tint={clear:'#cbe9f4',satin:'#e9f1f1',sun:'#38657f'}[c.finish];
- const opacity={clear:.09,satin:.58,sun:.32}[c.finish];
- const glint=c.glass==='3'?.13:.04;
- const frameOverlay=`<g fill="${frame}" fill-opacity=".72">
-   <polygon points="662,187 928,156 924,165 668,195"/>
-   <polygon points="662,187 668,195 668,354 660,360"/>
-   <polygon points="660,360 668,354 922,371 928,378"/>
-   <polygon points="928,156 928,378 922,371 924,165"/>
+ const opacity={clear:.065,satin:.58,sun:.32}[c.finish];
+ const glint=c.glass==='3'?.08:.03;
+ const frameOverlay=`<g fill="${frame}" fill-opacity=".62">
+   <polygon points="665,186 919,159 917,171 674,198"/>
+   <polygon points="665,186 674,198 674,350 664,358"/>
+   <polygon points="664,358 674,350 912,366 918,375"/>
+   <polygon points="919,159 918,375 912,366 917,171"/>
   </g>`;
- const bar=c.opening==='fixed'?'':`<polygon points="789,183 801,181 802,363 790,361" fill="${frame}" fill-opacity=".75"/>`;
- const sashNote=c.opening!=='fixed'&&app.mode!=='closed'?`<path d="M804 171L922 159L928 377L807 377Z" stroke="#087e87" stroke-width="4" stroke-dasharray="11 7" fill="${tint}" fill-opacity=".09"/>`:'';
+ const bar=c.opening==='fixed'?'':`<polygon points="784,188 802,186 803,360 785,356" fill="${frame}" fill-opacity=".64"/>`;
+ const sashNote=c.opening!=='fixed'&&app.mode!=='closed'?`<path d="M804 187L912 174L913 362L804 354Z" stroke="#087e87" stroke-width="3" stroke-dasharray="10 7" fill="${tint}" fill-opacity=".07"/>`:'';
  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="Schlafzimmer des Einfamilienhauses, Fenster mit Gestaltungsvariante: ${labels.frame[c.frame]}, ${labels.glass[c.glass]}.">
-  <defs><clipPath id="kt-bedroom-glass"><polygon points="664,172 926,158 930,381 662,380"/></clipPath></defs>
-  ${photo}<g clip-path="url(#kt-bedroom-glass)"><rect x="655" y="150" width="290" height="246" fill="${tint}" opacity="${opacity}"/><rect x="655" y="150" width="290" height="246" fill="#d7edf4" opacity="${glint}"/></g>
+  <defs><clipPath id="kt-bedroom-glass"><polygon points="679,199 781,189 781,350 679,344"/><polygon points="804,187 912,174 913,362 804,354"/></clipPath></defs>
+  ${photo}<g clip-path="url(#kt-bedroom-glass)"><rect x="675" y="170" width="242" height="198" fill="${tint}" opacity="${opacity}"/><rect x="675" y="170" width="242" height="198" fill="#d7edf4" opacity="${glint}"/></g>
   ${frameOverlay}${bar}${sashNote}
   <polygon class="kt-photo-hit" data-kt-glass-action="configure" tabindex="0" role="button" aria-label="Fenster gestalten" points="651,159 932,144 941,397 650,397" fill="transparent" stroke="transparent"/>
  </svg>`;
